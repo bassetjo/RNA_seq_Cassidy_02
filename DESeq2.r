@@ -5,7 +5,13 @@ library("biomaRt")
 #library("AnnotationDbi")
 #library("org.Hs.eg.db")
 
-setwd("X:/SOM/Dermatology/Research/Research Division/Leachman_Cassidy_lab/John/RNASeq/RNA_seq_02")
+source("Directories.txt")
+##Directories.txt specifies only one directory used in this file, DEMasterDir
+##DeMasterDir contains:
+  ## DESeq2.r -- This file
+  ## fcts.RData -- A file containing the .RData output of featureCounts
+  
+setwd(DEMasterDir)
 load("fcts.RData")
 
 ###########
@@ -107,8 +113,3 @@ write.csv(resSig, file = 'DifferentialExpressionAnalysis.csv')
 write.table(counts(dds)[rownames(resSig),], file = "deCounts.txt", sep = '\t', quote = FALSE, row.names = TRUE)
 
 plotMA(res, ylim = c(-5,5))
-
-
-
-
-

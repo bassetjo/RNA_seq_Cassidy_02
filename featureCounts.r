@@ -3,7 +3,7 @@ source("http://bioconductor.org/biocLite.R")
 biocLite("Rsubread")
 library(Rsubread)
 
-setwd("/home/user1/Documents/R_projects/RNA_seq_01")
+setwd(FCMasterDir)
 
 #####################
 ##Functions
@@ -15,13 +15,13 @@ getfileNames <- function(DIR){
 	return(bamfiles)
 	}
 
-strFileNames <- getfileNames("/home/user1/Documents/R_projects/RNA_seq_01/Alignments")
+strFileNames <- getfileNames(AlignmentsDir)
 
 ######################
 ##RUN FEATURE COUNTS
 ######################
 fc1 <- featureCounts(files = c(strFileNames),
-	annot.ext = "/home/user1/Documents/R_projects/RNA_seq_01/Annotation_files/Homo_sapiens.GRCh38.89.chr.gtf",
+	annot.ext = AnnotationDir,
 	strandSpecific = 2, largestOverlap =TRUE, isGTFAnnotationFile = TRUE)
 
 ##remove all the irrelevent directory information from the collumn names in fc1 tables
