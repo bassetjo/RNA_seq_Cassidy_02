@@ -1,0 +1,4 @@
+DEMasterDir <- "X:/SOM/Dermatology/Research/Research Division/Leachman_Cassidy_lab/John/RNASeq/RNA_seq_02"
+FCMasterDir <- "/home/user1/Documents/R_projects/RNA_seq_01"
+AlignmentsDir <- "/home/user1/Documents/R_projects/RNA_seq_01/Alignments"
+AnnotationDir <- "/home/user1/Documents/R_projects/RNA_seq_01/Annotation_files/Homo_sapiens.GRCh38.89.chr.gtf"

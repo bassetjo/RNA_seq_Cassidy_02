@@ -108,7 +108,7 @@ resSig <- cbind(resSymbols, resSig)
 all(rownames(resSig) == resSig$ensembl_gene_id)
 resSig$ensembl_gene_id <- NULL
 
-
+#save(resSig, file = "DEAnalysis.RData")
 write.csv(resSig, file = 'DifferentialExpressionAnalysis.csv')
 write.table(counts(dds)[rownames(resSig),], file = "deCounts.txt", sep = '\t', quote = FALSE, row.names = TRUE)
 
